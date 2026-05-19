@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap');
+
+:root {
+  --blue-dark:   #0077b6;
+  --blue-mid:    #00b4d8;
+  --blue-light:  #90e0ef;
+  --green:       #06d6a0;
+  --green-dark:  #049e78;
+  --yellow:      #ffd166;
+  --yellow-dark: #f4a261;
+  --navy:        #023e8a;
+  --white:       #ffffff;
+  --bg:          #f0faff;
+  --text:        #02415a;
+  --text-light:  #4a7a94;
+  --shadow-sm:   0 2px 8px rgba(0,119,182,0.12);
+  --shadow-md:   0 6px 20px rgba(0,119,182,0.18);
+  --shadow-lg:   0 12px 40px rgba(0,119,182,0.22);
+  --radius-sm:   12px;
+  --radius-md:   20px;
+  --radius-lg:   28px;
+  --radius-full: 999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.header-titulo {
+  margin-bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
+
+.header-titulo h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  text-shadow: 2px 2px 0px var(--blue-light);
+}
+
+.main-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  gap: 25px;
+}
+
+/* Botones con animaciones pulidas */
+.btn1 {
+  font-size: 1.4rem;
+  font-family: 'Fredoka One', cursive;
+  color: var(--white);
+  background-color: var(--blue-dark);
+  border: none;
+  padding: 14px 40px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-md);
+}
+
+.btn1:hover {
+  background-color: var(--navy);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn2 {
+  font-size: 1.05rem;
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 0.5px;
+  color: var(--navy);
+  background-color: var(--white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 180px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn2:hover {
+  background-color: var(--blue-light);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+.btn3 {
+  font-size: 1.1rem;
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  background: transparent;
+  border: 2px solid var(--text-light);
+  padding: 10px 30px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn3:hover {
+  background-color: var(--text-light);
+  color: var(--white);
+}
+
+/* Tarjetas */
+.card-bienvenida {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: 45px;
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+  border: 4px solid var(--blue-light);
+  margin-top: 10vh;
+}
+
+.card1 {
+  background-color: var(--blue-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-grid {
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--navy);
+}
+
+/* Formularios adaptables */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.form-container label {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding-left: 5px;
+}
+
+.form-container input, .form-container select {
+  width: 100%;
+  padding: 11px 15px;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  color: var(--text);
+  background-color: var(--white);
+  transition: all 0.3s ease;
+}
+
+.form-container input:focus, .form-container select:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 8px rgba(255, 209, 102, 0.6);
+}
+
+.texto-info {
+  color: var(--white);
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* Tabla Estética de Consultas */
+.tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  box-shadow: var(--shadow-md);
+  margin-top: 10px;
+}
+
+.tabla-resultados {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-resultados th {
+  background-color: var(--navy);
+  color: var(--white);
+  font-family: 'Fredoka One', cursive;
+  padding: 12px 10px;
+  font-size: 0.85rem;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+.tabla-resultados td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--blue-light);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.tabla-resultados tr:nth-child(even) {
+  background-color: var(--bg);
+}
+
+.tabla-resultados tr:last-child td {
+  border-bottom: none;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Principal</title>
+  <link rel="stylesheet" href="estilo.css">
+  
+  <style>
+    /* Estilos rápidos para los mularios dentro de las tarjetas */
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+    }
+    .form-container label {
+      color: var(--white);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: -5px;
+    }
+    .form-container input {
+      width: 100%;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      border: none;
+      font-family: 'Nunito', sans-serif;
+      outline: none;
+    }
+    .grid-botones {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+      justify-content: center;
+      width: 100%;
+    }
+    /* Estilo para el texto de información */
+    .texto-info {
+      color: var(--white);
+      font-family: 'Nunito', sans-serif;
+      text-align: center;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header-titulo">
+    <h1>Página Principal</h1>
+  </header>
+
+  <main class="main-principal" style="flex-direction: column; align-items: center; gap: 25px;">
+    
+    <div class="card1">
+      <button class="btn2" onclick="mostrarSeccion('sec-informacion')" style="justify-content: center;">
+        Información
+      </button> 
+      <button class="btn2" onclick="mostrarSeccion('sec-formulario')" style="justify-content: center;">
+        Formulario
+      </button>  
+      <button class="btn2" onclick="mostrarSeccion('sec-consultas')" style="justify-content: center; background-color: var(--yellow); color: var(--navy);">
+        Consultas
+      </button>
+    </div>
+
+    <div id="sec-informacion" class="card1" style="flex-direction: column; display: flex;">
+      <h2 style="color: var(--yellow); font-family: 'Fredoka One', cursive; text-align: center; margin: 0;">Sistema de Biblioteca</h2>
+      <p class="texto-info">
+        Bienvenido al sistema de control de lecturas del plantel. Aquí podrás registrar los libros que están leyendo los alumnos y realizar consultas rápidas por matrícula.
+      </p>
+    </div>
+
+    <div id="sec-formulario" class="card1" style="flex-direction: column; display: none; max-width: 500px;">
+      <h2 style="color: var(--green); font-family: 'Fredoka One', cursive; text-align: center; margin: 0;">Registrar Lectura</h2>
+      
+      <form action="guardar.php" method="POST" class="form-container">
+        <label>Matrícula del Alumno:</label>
+        <input type="text" name="matricula_alumno" required placeholder="Ej. 20261001">
+
+        <label>Nombre del Alumno:</label>
+        <input type="text" name="nombre_alumno" required placeholder="Nombre completo">
+
+        <label>Semestre:</label>
+        <select name="semestre" required style="width: 100%; padding: 10px; border-radius: var(--radius-sm); border: none; font-family: 'Nunito', sans-serif;">
+            <option value="" disabled selected>Selecciona el semestre</option>
+            <option value="1">1° Semestre</option>
+            <option value="2">2° Semestre</option>
+            <option value="3">3° Semestre</option>
+            <option value="4">4° Semestre</option>
+            <option value="5">5° Semestre</option>
+            <option value="6">6° Semestre</option>
+        </select>
+
+        <label>Especialidad:</label>
+        <select name="especialidad" required style="width: 100%; padding: 10px; border-radius: var(--radius-sm); border: none; font-family: 'Nunito', sans-serif;">
+            <option value="" disabled selected>Selecciona especialidad</option>
+            <option value="Programacion">Programación</option>
+            <option value="Contabilidad">Contabilidad</option>
+            <option value="Electricidad">Electricidad</option>
+            <option value="Logistica">Logística</option>
+        </select>
+        <label>Código del Libro:</label>
+        <input type="text" name="codigo_libro" required placeholder="Ej. BK-9901">
+
+        <label>Nombre del Libro:</label>
+        <input type="text" name="nombre_libro" required placeholder="Título del libro">
+
+        <label>Fecha de Inicio de Lectura:</label>
+        <input type="date" name="fecha_inicio_lecutura" required>
+
+        <label>Fecha de Término de Lectura:</label>
+        <input type="date" name="fecha_final_lecutura" required>
+
+        <button type="submit" class="btn2" style="justify-content: center; width: 100%; background-color: var(--green); color: white; margin-top: 10px;">
+          Guardar Registro
+        </button>
+      </form>
+    </div>
+
+    <div id="sec-consultas" class="card1" style="flex-direction: column; display: none;">
+      <h2 style="color: var(--blue-light); font-family: 'Fredoka One', cursive; text-align: center; margin: 0;">Buscar Alumno</h2>
+      
+      <form action="consultar.php" method="POST" class="form-container" style="align-items: center;">
+        <label style="align-self: flex-start;">Ingresa la Matrícula del Alumno:</label>
+        <input type="text" name="matricula_busqueda" required placeholder="Ej. 20261001">
+        
+        <button type="submit" class="btn2" style="justify-content: center; width: 100%; background-color: var(--blue-mid); color: white; margin-top: 10px;">
+          Buscar en Base de Datos
+        </button>
+      </form>
+    </div>
+
+    <button class="btn3" onclick="window.location.href='bienvenida.html'">
+      Regresar
+    </button>
+    
+  </main>
+
+  <script>
+    function mostrarSeccion(idSeccion) {
+      // 1. Ocultamos las tres secciones por igual
+      document.getElementById('sec-informacion').style.display = 'none';
+      document.getElementById('sec-formulario').style.display = 'none';
+      document.getElementById('sec-consultas').style.display = 'none';
+      
+      // 2. Mostramos únicamente la sección que el usuario seleccionó
+      document.getElementById(idSeccion).style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
