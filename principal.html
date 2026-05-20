@@ -65,12 +65,53 @@
       </button>
     </div>
 
-    <div id="sec-informacion" class="card1" style="flex-direction: column; display: flex;">
-      <h2 style="color: var(--yellow); font-family: 'Fredoka One', cursive; text-align: center; margin: 0;">Sistema de Biblioteca</h2>
-      <p class="texto-info">
-        Bienvenido al sistema de control de lecturas del plantel. Aquí podrás registrar los libros que están leyendo los alumnos y realizar consultas rápidas por matrícula.
+<div id="sec-informacion" class="card1" style="display: flex; flex-direction: column;">
+      <h2 style="color: var(--yellow); font-family: 'Fredoka One', cursive; text-align: center;">Catálogo de Libros</h2>
+      <p class="texto-info" style="margin-bottom: 15px;">
+        Conoce algunos de los libros disponibles para lectura en el plantel:
       </p>
-    </div>
+
+      <div class="tabla-contenedor" style="width: 100%; overflow-x: auto;">
+        <table class="tabla-libros">
+          <tr>
+            <th>Nombre</th>
+            <th>Foto</th>
+            <th>Nombre</th>
+            <th>Foto</th>
+          </tr>
+          <tr>
+            <td>Don Quijote de la Mancha</td>
+            <td><img src="img/1.png" alt="Don Quijote"></td>
+            <td>Cien años de soledad</td>
+            <td><img src="img/2.png" alt="Cien años de soledad"></td>
+          </tr>
+          <tr>
+            <td>1984</td>
+            <td><img src="img/3.png" alt="1984"></td>
+            <td>Orgullo y prejuicio</td>
+            <td><img src="img/4.png" alt="Orgullo y prejuicio"></td>
+          </tr>
+          <tr>
+            <td>Matar a un ruiseñor</td>
+            <td><img src="img/5.png" alt="Matar a un ruiseñor"></td>
+            <td>El principito</td>
+            <td><img src="img/6.png" alt="El principito"></td>
+          </tr>
+          <tr>
+            <td>Crimen y castigo</td>
+            <td><img src="img/7.png" alt="Crimen y castigo"></td>
+            <td>El señor de los anillos</td>
+            <td><img src="img/8.png" alt="El señor de los anillos"></td>
+          </tr>
+          <tr>
+            <td>El diario de Ana Frank</td>
+            <td><img src="img/9.png" alt="El diario de Ana Frank"></td>
+            <td>Six seven kid secrets</td>
+            <td><img src="img/10.png" alt="Six seven kid secrets"></td>
+          </tr>
+        </table>
+      </div>
+      </div>
 
     <div id="sec-formulario" class="card1" style="flex-direction: column; display: none; max-width: 500px;">
       <h2 style="color: var(--green); font-family: 'Fredoka One', cursive; text-align: center; margin: 0;">Registrar Lectura</h2>
