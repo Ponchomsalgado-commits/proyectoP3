@@ -116,8 +116,7 @@
     <div id="sec-formulario" class="card1" style="flex-direction: column; display: none; max-width: 500px;">
       <h2 style="color: var(--green); font-family: 'Fredoka One', cursive; text-align: center; margin: 0;">Registrar Lectura</h2>
       
-      <form action="guardar.php" method="POST" class="form-container">
-        <label>Matrícula del Alumno:</label>
+    <form id="formRegistro" action="guardar.php" method="POST" class="form-container" onsubmit="return validarFormulario(event)">        <label>Matrícula del Alumno:</label>
         <input type="text" name="matricula_alumno" required placeholder="Ej. 20261001">
 
         <label>Nombre del Alumno:</label>
@@ -190,5 +189,8 @@
       document.getElementById(idSeccion).style.display = 'flex';
     }
   </script>
+  <script src="validaciones.js">
+  </script>
+
 </body>
 </html>

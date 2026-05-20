@@ -62,7 +62,6 @@ body {
   gap: 25px;
 }
 
-/* Botones con animaciones pulidas */
 .btn1 {
   font-size: 1.4rem;
   font-family: 'Fredoka One', cursive;
@@ -126,7 +125,6 @@ body {
   color: var(--white);
 }
 
-/* Tarjetas */
 .card-bienvenida {
   background-color: var(--white);
   border-radius: var(--radius-lg);
@@ -158,7 +156,6 @@ body {
   background-color: var(--navy);
 }
 
-/* Formularios adaptables */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -205,7 +202,6 @@ body {
   font-size: 1.05rem;
 }
 
-/* Tabla Estética de Consultas */
 .tabla-contenedor {
   width: 100%;
   overflow-x: auto;
@@ -244,4 +240,50 @@ body {
 
 .tabla-resultados tr:last-child td {
   border-bottom: none;
+}
+
+.tabla-libros {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--white);
+  border-radius: var(--radius-sm);
+  overflow: hidden; /* Para que las esquinas no se salgan del radio */
+  box-shadow: var(--shadow-sm);
+}
+
+.tabla-libros th {
+  background-color: var(--navy);
+  color: var(--yellow);
+  font-family: 'Fredoka One', cursive;
+  padding: 12px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.tabla-libros td {
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle; /* Centra el texto y la imagen verticalmente */
+  border-bottom: 1px solid var(--blue-light);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.tabla-libros tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-libros img {
+  width: 60px; /* Define el ancho estándar de las portadas */
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15); /* Pequeña sombra al libro */
+  transition: transform 0.3s ease; /* Prepara la animación */
+}
+
+.tabla-libros img:hover {
+  transform: scale(1.15);
+  cursor: pointer;
 }

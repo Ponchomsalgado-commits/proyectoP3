@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fecha_final      = $_POST['fecha_final_lecutura'];
 
     try {
-        // AQUI ESTÁ LA CORRECCIÓN: Nombres exactos de las columnas de tu imagen
+
         $sql = "INSERT INTO datosprestamo (MatriculaAlumno, NombreAlumno, Semestre, Especialidad, CodigoLibro, NombreLibro, FechaInicioLectura, FechaTerminoLectura) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
